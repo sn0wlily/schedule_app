@@ -1,0 +1,60 @@
+<!-
+name: tanaka
+date: 2020/7/13
+purpose: form
+->
+
+<%= form_with(model: kadai, local: true) do |form| %>
+  <% if kadai.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(kadai.errors.count, "error") %> prohibited this kadai from being saved:</h2>
+
+      <ul>
+      <% kadai.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :課題名 %>
+    <%= form.text_field :title, id: :kadai_title %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :科目名 %>
+    <%= form.text_field :out, id: :kadai_out %>
+  </div>  
+
+  <div class="field">
+    <%= form.label :詳細 %>
+    <%= form.text_area :etc, id: :kadai_etc %>
+  </div>
+
+  <div class="field">
+    <%= form.label :開始日 %>
+    <%= form.datetime_select :start_date, id: :kadai_start_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :期限 %>
+    <%= form.datetime_select :due, id: :kadai_due %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :重要度 %>
+    1-3で入力してね
+    <%= form.number_field :imp, id: :kadai_imp %>
+  </div>
+
+  <div class="field">
+    <%= form.label :進行度 %>
+    1-10で入力してね
+    <%= form.number_field :sinko, id: :kadai_sinko %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

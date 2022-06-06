@@ -1,0 +1,40 @@
+<!-
+name: tanaka,uemura
+date: 2020/7/13
+purpose: index
+->
+
+<p id="notice"><%= notice %></p>
+<h1>課題一覧</h1>
+<table border="1">
+  <thead>
+    <tr>
+      <th>　課題名</th>
+      <th>　科目名</th>
+      <th>　詳細</th>
+      <th>　開始日</th>
+      <th>　期限</th>
+      <th>　重要度　</th>
+      <th>　進行度　</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @kadais.each do |kadai| %>
+      <tr>
+        <td><%= kadai.title %></td>
+        <td><%= kadai.out%></td>
+        <td><%= kadai.etc %></td>
+        <td><%= kadai.start_date %></td>
+        <td><%= kadai.due %></td>
+        <td><%= kadai.imp %></td>
+        <td><%= kadai.sinko %></td>
+        <td><%= link_to '編集', edit_kadai_path(kadai), class:"btn btn-success btn-sm" %></td>
+        <td><%= link_to '削除', kadai, class:"btn btn-danger btn-sm",method: :delete, data: { confirm: '本当に消しますか?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to '新規作成', new_kadai_path,class: "btn btn-info" %>
+<%= link_to "プロフィールへ戻る", current_user,class: "btn btn-warning" %>

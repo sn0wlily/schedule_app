@@ -1,0 +1,40 @@
+<!-
+name: tanaka
+date: 2020/7/13
+purpose: header
+->
+
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+
+    <%= link_to "tasksupporter", root_path, id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Home", current_user %></li>
+        <% if logged_in? %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Account <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "my page", current_user %></li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to "Log out", logout_path, method: :delete %>
+              </li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link_to "Log in", login_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>
+<%= stylesheet_link_tag "application", :media => "all" %>
+<%= stylesheet_link_tag "custom", :media => "all" %>
+<%= stylesheet_link_tag "kadais", :media => "all" %>
+<%= stylesheet_link_tag "scaffolds", :media => "all" %>
+<%= stylesheet_link_tag "sessions", :media => "all" %>
+<%= stylesheet_link_tag "static_pages", :media => "all" %>
+<%= stylesheet_link_tag "users", :media => "all" %>

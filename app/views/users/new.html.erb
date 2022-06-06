@@ -1,0 +1,39 @@
+<!-
+name: honda
+date: 2020/7/13
+purpose: show
+->
+
+<% provide(:title, 'Sign up') %>
+<h1>新規登録</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user, url: signup_path) do |f| %>
+      <%= render 'shared/error_messages' %>
+
+      <%= f.label :ユーザー名 %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.label :メールアドレス %>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.label :パスワード %>
+      <%= f.password_field :password, class: 'form-control' %>
+
+      <%= f.label :password_confirmation, "パスワード(確認)" %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+      <br>
+      <%= f.submit "アカウント作成", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
+<%= stylesheet_link_tag "application", :media => "all" %>
+<%= stylesheet_link_tag "custom", :media => "all" %>
+<%= stylesheet_link_tag "kadais", :media => "all" %>
+<%= stylesheet_link_tag "scaffolds", :media => "all" %>
+<%= stylesheet_link_tag "sessions", :media => "all" %>
+<%= stylesheet_link_tag "static_pages", :media => "all" %>
+<%= stylesheet_link_tag "users", :media => "all" %>
+<%= stylesheet_link_tag "signin", :media => "all" %>

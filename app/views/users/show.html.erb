@@ -1,0 +1,33 @@
+<!-
+name: tanaka,takahashi
+date: 2020/7/13
+purpose: show
+->
+
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+</div>
+<p class="font1"><%= link_to '新規作成', new_kadai_path %></p>|
+<br>
+<p class="font1"><%= link_to '課題一覧', kadais_path %></p>|
+<br>
+<br>
+<br>
+<div id="calendar"></div>
+
+<%= stylesheet_link_tag "middle", :media => "all" %>
+<%= stylesheet_link_tag "application", :media => "all" %>
+<%= stylesheet_link_tag "custom", :media => "all" %>
+<%= stylesheet_link_tag "kadais", :media => "all" %>
+<%= stylesheet_link_tag "scaffolds", :media => "all" %>
+<%= stylesheet_link_tag "sessions", :media => "all" %>
+<%= stylesheet_link_tag "static_pages", :media => "all" %>
+<%= stylesheet_link_tag "users", :media => "all" %>
