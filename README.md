@@ -1,6 +1,6 @@
-# Ruby on Rails チュートリアルのサンプルアプリケーション
+# Ruby on Rails を用いたスケジュールアプリケーションです．
 
-これは、次の教材で作られたサンプルアプリケーションです。   
+これは、次の教材で作られたアプリケーションです。   
 [*Ruby on Rails チュートリアル*](https://railstutorial.jp/)
 [Michael Hartl](http://www.michaelhartl.com/) 著
 
@@ -39,3 +39,5 @@ $ rails server
 
 詳しくは、[*Ruby on Rails チュートリアル*](https://railstutorial.jp/)
 を参考にしてください。
+
+このアプリケーションはグループ開発の授業で作成されたもので、再度上げ直したものです。
